@@ -19,7 +19,7 @@ Feature: Portal HomePage Feature
 	Examples: 
 	
 		|SheetName|RowNumber|
-		|automation|0|
+		|TSYSSIERRA|0|
 	
 	@OMAHA
 	Scenario Outline: Admin FDR OMAHA(F/B)
@@ -50,4 +50,55 @@ Feature: Portal HomePage Feature
 	
 		|SheetName|RowNumber|
 		|FDCARDNET|0|
+	
 		
+	@FDRBUYPASS	
+    Scenario Outline: Admin FDR NORTH / BUYPASS
+	When FD BUYPASS	processor to select the Add Customer option
+	When user is boarded a Contact Information FD BUYPASS Iso given sheetname "<SheetName>" and rownumber <RowNumber> 
+	When user is boarded a Processor Info  FD BUYPASS Iso given sheetname "<SheetName>" and rownumber <RowNumber> 
+	When FD BUYPASS processor select the Add User option
+	When user is boarded a Admin user FD BUYPASS processor given sheetname "<SheetName>" and rownumber <RowNumber> 
+	When FD BUYPASS processor to select the Add Customer option in User Level
+	When user is boarded in a userlevel FD BUYPASS Contact Information ISO given sheetname "<SheetName>" and rownumber <RowNumber> 
+	When user is boarded in a userlevel FD BUYPASS Processor Info ISO given sheetname "<SheetName>" and rownumber <RowNumber> 
+	Examples: 
+	
+		|SheetName|RowNumber|
+		|FDBUYPASS|0|
+		
+	@FDRNASHVILLE	
+    Scenario Outline: Admin FDR NORTH / NASHVILLE
+	When FD NASHVILLE	processor to select the Add Customer option
+	When user is boarded a Contact Information FD NASHVILLE Iso given sheetname "<SheetName>" and rownumber <RowNumber> 
+	When user is boarded a Processor Info  FD NASHVILLE Iso given sheetname "<SheetName>" and rownumber <RowNumber> 
+	When FD NASHVILLE processor select the Add User option
+	When user is boarded a Admin user FD NASHVILLE processor given sheetname "<SheetName>" and rownumber <RowNumber> 
+	When FD NASHVILLE processor to select the Add Customer option in User Level
+	When user is boarded in a userlevel FD NASHVILLE Contact Information ISO given sheetname "<SheetName>" and rownumber <RowNumber> 
+	When user is boarded in a userlevel FD NASHVILLE Processor Info ISO given sheetname "<SheetName>" and rownumber <RowNumber> 
+	Examples: 
+	
+		|SheetName|RowNumber|
+		|FDNASHVILLE|0|
+		
+		
+	@POSTILION	
+    Scenario Outline: Admin POSTILION
+	When FD POSTILION	processor to select the Add Customer option
+	When user is boarded a Contact Information FD POSTILION Iso given sheetname "<SheetName>" and rownumber <RowNumber> 
+	When user is boarded a Processor Info  FD POSTILION Iso given sheetname "<SheetName>" and rownumber <RowNumber> 
+	When FD POSTILION processor select the Add User option
+	When user is boarded a Admin user FD POSTILION processor given sheetname "<SheetName>" and rownumber <RowNumber> 
+	When FD POSTILION processor to select the Add Customer option in User Level
+	When user is boarded in a userlevel FD POSTILION Contact Information ISO given sheetname "<SheetName>" and rownumber <RowNumber> 
+	When user is boarded in a userlevel FD POSTILION Processor Info ISO given sheetname "<SheetName>" and rownumber <RowNumber> 
+	Examples: 
+	
+		|SheetName|RowNumber|
+		|FDPOSTILION|0|
+		|FDPOSTILION|1|
+		
+		
+		
+			

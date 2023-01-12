@@ -7,17 +7,21 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features= {"src/test/resources/AppFeatures/Login.feature"},
-        glue= {"stepdefinations", "AppHooks"},
-       plugin= {"pretty"
+        features= {"src/test/resources/AppFeatures/ISOPage.feature"},
+        glue= {"StepDefinitions", "AppHooks"},
+       plugin= {"pretty"},
     		   
-        }		
+    		   
+       tags= "@SUBISOOMAHA"		
      
         )
 
 
 
 
-public class PortalRunner {
+public class PortalRunner { 
 
 }
+
+
+

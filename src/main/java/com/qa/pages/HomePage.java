@@ -3,6 +3,8 @@ package com.qa.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import com.qa.pages.ISOPage;
+
 public class HomePage {
 	
 
@@ -66,6 +68,11 @@ public class HomePage {
 		        
 		    }
 		    
+		    public ISOPage ADiso() throws InterruptedException {
+		    	Thread.sleep(3000);
+		        driver.findElement(MerMgtclick).click();
+		        return new ISOPage(driver);
+		    }
 		    
 		}
 
