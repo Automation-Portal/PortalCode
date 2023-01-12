@@ -869,7 +869,10 @@ public void SubIsoUser() throws InterruptedException {
 	
 	
 	
-	
+public void selectallmodule1() {
+	   driver.findElement(selectmodule).click();
+	   driver.findElement(submitbutton).click();
+	}
 	
 	
 	
