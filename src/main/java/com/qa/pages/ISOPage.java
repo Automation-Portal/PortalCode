@@ -374,6 +374,7 @@ public class ISOPage {
 		     driver.switchTo().window(tabs.get(1));
 		     
 		      driver.get("https://mail.google.com/mail/u/0/#inbox");
+		      
 		     
 		 	driver.findElement(ed).sendKeys("valorautomation@gmail.com");
 		 	driver.findElement(By.xpath("//*[@id=\"identifierNext\"]/div/button/span")).click();
@@ -870,7 +871,10 @@ public void SubIsoUser() throws InterruptedException {
 	
 	
 	
-	
+public void selectallmodule5() {
+	   driver.findElement(selectmodule).click();
+	   driver.findElement(submitbutton).click();
+	}
 	
 	
 	
