@@ -875,6 +875,11 @@ public void selectallmodule1() {
 	}
 	
 	
+
+public void selectallmodule2() {
+   driver.findElement(selectmodule).click();
+   driver.findElement(submitbutton).click();
+}
 	
 	
 	
