@@ -1,12 +1,18 @@
 package com.qa.pages;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.List;
+
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
 public class OperatorPage {
 
-}
-
-
-
-public class TransactionsPage {
 
 	private WebDriver driver;
 	
@@ -28,7 +34,7 @@ public class TransactionsPage {
 	
 	
 
-	public TransactionsPage(WebDriver driver) {
+	public OperatorPage(WebDriver driver) {
 		this.driver = driver;
 
 	}
