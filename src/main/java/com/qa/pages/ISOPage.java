@@ -948,12 +948,16 @@ public void selectallmodule6() {
 	}
 	
 	
+<<<<<<< HEAD
 //DeviceManagement
 
 public void DevicemanagementClick() {
 	
 	driver.findElement(DeviceManagement).click();
 	
+=======
+	77777777777777777777777777
+>>>>>>> 22907a547409bb4e0a3a84ea92b60248bd9771dc
 	
 }
 
