@@ -7,6 +7,7 @@ import java.util.Set;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -120,13 +121,64 @@ public class ISOPage {
 	    private By  activate = By.xpath("//u[normalize-space()='Click Here For Activation']");
 	  //ADDISOUSER
 	    private By subuser = By.xpath("//span[normalize-space()='Add USER']");
-	    private By Threedot = By.xpath("(//button[@aria-label='More'])[3]");
+	    private By Threedot = By.xpath("(//button[@aria-label='More'])[1]");
 	
 	   //SUBISO 
 	    private By prcssrType = By.xpath("//div[contains(text(),'TSYS SIERRA')]");
 	//search box:
 	    private By Search = By.id("outlined-name");
 	
+	    //Sale:
+		private By epitype =  By.xpath("//span[@class='MuiButton-label']//div");
+		private By sale = By.xpath("//input[@value='0']");
+		private By amnt = By.name("amount");
+		private By cdnumber = By.xpath("//input[@placeholder='Card number*']");
+		private By cvv = By.xpath("//*[@id=\"app-site\"]/div/div[1]/div[3]/main/div/div[1]/div/div/div/div/div/div/div[2]/div/div[3]/div/div/div/form/div[1]/div[2]/input");
+		private By mmyy = By.xpath("//*[@id=\"app-site\"]/div/div[1]/div[3]/main/div/div[1]/div/div/div/div/div/div/div[2]/div/div[3]/div/div/div/form/div[2]/div[3]/input");
+		private By crdholdr =By.name("_chn");
+		private By prcss = By.xpath("//div[@class='card-btn']//span[@class='MuiButton-label']");
+		private By prc = By.xpath("(//span[contains(text(),'Process')])[2]");
+		private By phn	= By.name("phoneNo");
+		private By em = By.name("email");
+		private By close = By.xpath("(//span[contains(text(),'Close')])[1]");
+	    //DeviceManagement Tip,Tax & FEE Xpath
+	    private By DeviceManagement = By.xpath("//span[contains(text(),'Device Management')]");
+	    private By virterminalclick = By.xpath("//*[@id=\"app-site\"]/div/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[4]/a");
+	    private By loginButton = By.xpath("//span[contains(text(),'YES')]");
+	    //Flag:
+		private By TipYesNo = By.xpath("(//span[contains(text(),'YES')])[1]");
+		private By TipOnScreenYesNo = By.xpath("(//span[contains(text(),'YES')])[2]");
+		private By CustomFeeYesNo = By.xpath("(//span[contains(text(),'YES')])[3]");
+		private By EnableForDebitYesNo = By.xpath("(//span[contains(text(),'YES')])[4]");
+		private By CustomFeeDisclosureYesNo = By.xpath("(//span[contains(text(),'YES')])[5]");
+		private By IncludeTipOnYesNo = By.xpath("(//span[contains(text(),'YES')])[6]");
+		private By ShowRemoveFeeYesNo = By.xpath("(//span[contains(text(),'YES')])[7]");
+		private By PromptPasswordToRemoveFeeYesNo = By.xpath("(//span[contains(text(),'YES')])[8]");
+		private By IncludeTaxYesNo = By.xpath("(//span[contains(text(),'YES')])[9]");
+		private By TaxYesNo = By.xpath("(//span[contains(text(),'YES')])[10]");
+		//TipOnScreen
+		private By YesNo = By.xpath("(//span[contains(text(),'YES')])[2]");
+		private By Option1 = By.xpath("(//input[@type='text'])[1]");
+		private By Option2 = By.xpath("(//input[@type='text'])[2]");
+		private By Option3 = By.xpath("(//input[@type='text'])[3]");
+		private By Option4 = By.xpath("(//input[@type='text'])[4]");
+		
+		//MaxTIP"
+		private By MaxTip = By.xpath("(//input[@value='350'])[1]");
+		
+		//TAX:
+		private By StateTax = By.xpath("(//input[@value='4.000'])[1]");
+		private By CityTax = By.xpath("(//input[@value='1.000'])[1]");
+		private By ReducedTax = By.xpath("(//input[@value='6.000'])[1]");
+		
+		//RRN:
+		private By RRN = By.xpath("//*[@id=\"myId\"]/div/table/tbody/tr/td/table/tbody/tr/td/table[4]/tbody/tr[1]/td/div/table[8]/tbody/tr/td/text()[1]");
+		private By ReceiptClose= By.xpath("(//i[@title='Close'])[2]");
+		
+	    //TipAdjust
+		
+	private By TipAmount = By.xpath("//div[@class='MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl MuiInputBase-adornedStart MuiInputBase-marginDense MuiInput-marginDense'])[1]");
+	private By Close = By.xpath("//span[contains(text(),'Close')]");
 
 	public ISOPage(WebDriver driver) {
 		this.driver = driver;
@@ -896,17 +948,346 @@ public void selectallmodule6() {
 	}
 	
 	
+//DeviceManagement
+
+public void DevicemanagementClick() {
+	
+	driver.findElement(DeviceManagement).click();
+	
+	
+}
+
+public void DevicemanagementSearchBoxClick() throws InterruptedException {
+	Thread.sleep(3000);
+
+	driver.findElement(By.xpath("//input[@id='outlined-name']")).sendKeys("2211585113");
+}
+
+
+public void DevicemanagementThreeDotClick() throws InterruptedException {
+	
+	Thread.sleep(3000);
+	driver.findElement(Threedot).click();
+	Thread.sleep(3000);
+	List<WebElement> devcType = driver.findElements(By.xpath("//ul[@role='menu']/li"));
+	devcType.get(0).click();
+}
+	
+public void TipFlagYes() throws InterruptedException {
+	
+	//WebElement elem = driver.find_element_by_id("myId")
+		//	if elem.is_enabled():
+			  //  elem.click()
+			//else:
+			  //  pass # whatever logic to handle...
+	//driver.findElement(TipYesNo).click();
+	//System.out.println("Tip Flag is Enabled");
+	/*
+	 * WebElement txt
+	 * =driver.findElement(By.xpath("(//span[contains(text(),'YES')])[1]")); String
+	 * text=txt.getAttribute("innerHTML"); System.out.println(text);
+	 */
+	
+	//Select seclect = new Select(driver.findElement(By.xpath("(//span[contains(text(),'YES')])[1]")));
+	//seclect.selectByVisibleText("YES");
+	
+	Thread.sleep(3000);
+	// driver.findElement(By.xpath("//button[@style='font-size: 11px;border-right: 5px solid rgb(229, 63, 63);']")).click();
+	 
+	List<WebElement> selectYesNo = driver.findElements(By.xpath("(//div[@role='group'])[1]/button"));
+	 WebElement toggleYes = selectYesNo.get(0);
+	 WebElement toggleNo = selectYesNo.get(1);
+	 Point TipYes = toggleYes.getLocation();
+	 Point TipNo = toggleNo.getLocation();
+
+	 if(TipYes.getX()==966)				//Tip Enabled
+	 {
+		 
+		 Thread.sleep(3000);
+	 	 driver.findElement(By.xpath("(//div[@class='quick-menu dropdown'])[3]")).click();
+		  driver.findElement(By.xpath("//span[contains(text(),'Logout')]")).click();
+		  driver.switchTo().alert().accept();
+		  driver.findElement(By.id("emailtype")).sendKeys("vigneshradhakrishnan76+pinmerchant@gmail.com");
+		  driver.findElement(By.id("passwordtype")).sendKeys("Valor123");
+		  driver.findElement(continueButton).click();
+		  Thread.sleep(3000);
+		  driver.findElement(loginButton).click();
+		  Thread.sleep(6000);
+		  driver.findElement(virterminalclick).click();
+	 }
+	 else								//Tip Disabled
+	 {
+		 toggleYes.click();
+		 driver.findElement(By.xpath("//span[contains(text(),'SAVE')]")).click();
+		 Thread.sleep(3000);
+	 	 driver.findElement(By.xpath("(//div[@class='quick-menu dropdown'])[3]")).click();
+		  driver.findElement(By.xpath("//span[contains(text(),'Logout')]")).click();
+		  driver.findElement(By.id("emailtype")).sendKeys("vigneshradhakrishnan76+pinmerchant@gmail.com");
+		  driver.findElement(By.id("passwordtype")).sendKeys("Valor123");
+		  driver.findElement(continueButton).click();
+		  Thread.sleep(3000);
+		  driver.findElement(loginButton).click();
+		  Thread.sleep(6000);
+		  driver.findElement(virterminalclick).click();
+	 }
+	 
+	 
+	/* boolean element;
+	 * 
+	if(element==true) {
+	 
+	 System.out.println("Yes ! Element is Present" + text);
+	  
+	 }
+	 
+	  else { System.out.println("NO ! Element is not Present"); if(nn=false) {
+	  Thread.sleep(3000);
+	  driver.findElement(By.xpath("(//span[contains(text(),'YES')])[1]")).click();
+	  } } */
+	 
+	//Boolean element = driver.findElement(By.xpath("(//span[contains(text(),'YES')])[1]\"))"));
+	
+	//if(nn==true) {
+	
+	  
+    // System.out.println("Is element enabled on webpage: " + nn.
+	//}
+     
+     
+	 
+	System.out.println("Successfully for the TipFlag is enabled");
+	 
+}
+	
+public void TipFlagNo() throws InterruptedException {
+	
+	//WebElement elem = driver.find_element_by_id("myId")
+		//	if elem.is_enabled():
+			  //  elem.click()
+			//else:
+			  //  pass # whatever logic to handle...
+	//driver.findElement(TipYesNo).click();
+	//System.out.println("Tip Flag is Enabled");
+	/*
+	 * WebElement txt
+	 * =driver.findElement(By.xpath("(//span[contains(text(),'YES')])[1]")); String
+	 * text=txt.getAttribute("innerHTML"); System.out.println(text);
+	 */
+	
+	//Select seclect = new Select(driver.findElement(By.xpath("(//span[contains(text(),'YES')])[1]")));
+	//seclect.selectByVisibleText("YES");
+	
+	Thread.sleep(3000);
+	// driver.findElement(By.xpath("//button[@style='font-size: 11px;border-right: 5px solid rgb(229, 63, 63);']")).click();
+	 
+	List<WebElement> selectYesNo = driver.findElements(By.xpath("(//div[@role='group'])[1]/button"));
+	 WebElement toggleYes = selectYesNo.get(0);
+	 WebElement toggleNo = selectYesNo.get(1);
+	 Point TipYes = toggleYes.getLocation();
+	 Point TipNo = toggleNo.getLocation();
+
+	 if(TipNo.getX()==970)				//Tip Enabled
+	 {
+		 Thread.sleep(3000);
+		 Thread.sleep(20000);
+	 	 driver.findElement(By.xpath("(//div[@class='quick-menu dropdown'])[3]")).click();
+		  driver.findElement(By.xpath("//span[contains(text(),'Logout')]")).click();
+		  driver.findElement(By.id("emailtype")).sendKeys("vigneshradhakrishnan76+pinmerchant@gmail.com");
+		  driver.findElement(By.id("passwordtype")).sendKeys("Valor123");
+		  driver.findElement(continueButton).click();
+		  Thread.sleep(3000);
+		  driver.findElement(loginButton).click();
+		  Thread.sleep(6000);
+		  driver.findElement(virterminalclick).click();
+	 }
+	 else								//Tip Disabled
+	 {
+		 toggleYes.click();
+		 driver.findElement(By.xpath("//span[contains(text(),'SAVE')]")).click();
+		 Thread.sleep(20000);
+	 	 driver.findElement(By.xpath("(//div[@class='quick-menu dropdown'])[3]")).click();
+		  driver.findElement(By.xpath("//span[contains(text(),'Logout')]")).click();
+		  driver.findElement(By.id("emailtype")).sendKeys("vigneshradhakrishnan76+pinmerchant@gmail.com");
+		  driver.findElement(By.id("passwordtype")).sendKeys("Valor123");
+		  driver.findElement(continueButton).click();
+		  Thread.sleep(3000);
+		  driver.findElement(loginButton).click();
+		  Thread.sleep(6000);
+		  driver.findElement(virterminalclick).click();
+	 }
+	 
+	 
+	/* boolean element;
+	if(element==true) {
+	 
+	 System.out.println("Yes ! Element is Present" + text);
+	  
+	 }
+	 
+	  else { System.out.println("NO ! Element is not Present"); if(nn=false) {
+	  Thread.sleep(3000);
+	  driver.findElement(By.xpath("(//span[contains(text(),'YES')])[1]")).click();
+	  } } */
+	 
+	//Boolean element = driver.findElement(By.xpath("(//span[contains(text(),'YES')])[1]\"))"));
+	
+	//if(nn==true) {
+	
+	  
+    // System.out.println("Is element enabled on webpage: " + nn.
+	//}
+     
+     
+	 driver.findElement(By.xpath("//span[contains(text(),'SAVE')]")).click();
+	System.out.println("Successfully for the TipFlag is enabled");
+	 
+}
+	
+public void SaleTransaction() throws InterruptedException {	
+	
+	/*
+	 * Thread.sleep(20000);
+	 * driver.findElement(By.xpath("(//div[@class='quick-menu dropdown'])[3]")).
+	 * click();
+	 * driver.findElement(By.xpath("//span[contains(text(),'Logout')]")).click();
+	 * driver.findElement(By.id("emailtype")).sendKeys(
+	 * "vigneshradhakrishnan76+pinmerchant@gmail.com");
+	 * driver.findElement(By.id("passwordtype")).sendKeys("Valor123");
+	 * driver.findElement(continueButton).click(); Thread.sleep(3000);
+	 * driver.findElement(loginButton).click(); Thread.sleep(3000);
+	 * driver.findElement(virterminalclick).click();
+	 */
+		  
+		  
+	
+}
+	
+	
+
+public void epiD () throws InterruptedException {
+	Thread.sleep(3000);
+	   driver.findElement(epitype).click();
+		
+	List<WebElement> terminal = driver.findElements(By.xpath("//ul[@role='menu']/li"));
+       System.out.println("this size is"+terminal.size());
+    terminal.get(2).click();
+    
+}  
+
+
+public void amount()  throws InterruptedException {
+	
+     
+	Thread.sleep(3000);
+	driver.findElement(amnt).sendKeys("1020");
+	driver.findElement(phn).sendKeys("7639552000");
+	driver.findElement(em).sendKeys("Vigneshwa11ran@valorpaytech.com");
+	
+
+}
+
+
+public void cardNumber()  throws InterruptedException {
+	  
+	driver.findElement(cdnumber).sendKeys("4111111111111111");
+	
+}
+
+public void CVV()  throws InterruptedException {
+  	  
+	driver.findElement(cvv).sendKeys("999");
+	  
+    driver.findElement(mmyy).sendKeys("12/25");
+}
+
+public void cardHolderName()  throws InterruptedException {
+  	  
+	driver.findElement(crdholdr).sendKeys("Vignesh");
+	  
+
+}
+public void Process()  throws InterruptedException {
+  	  
+	driver.findElement(prcss).click();
+	driver.findElement(prc).click();
+	Thread.sleep(6000);
+	driver.findElement(Close).click();
+
+}
+
+public void FindRRN() throws InterruptedException {
+	
+	Thread.sleep(6000);
+	driver.findElement(Threedot).click();
+	Thread.sleep(3000);
+	List<WebElement> openbath = driver.findElements(By.xpath("//ul[@role='menu']/li"));  
+    openbath.get(0).click();
+	
+	WebElement txt =driver.findElement(By.xpath("//*[@id=\"myId\"]/div/table/tbody/tr/td/table/tbody/tr/td/table[4]/tbody/tr[1]/td/div/table[8]/tbody/tr/td/text()[1]"));
+	String text=txt.getAttribute("innerHTML");
+	System.out.println("This Transaction RRN is " + text);
 	
 	
 	
+}
+
+public void Txn() throws InterruptedException {
+
+	driver.findElement(By.xpath("//span[contains(text(),'Transactions')]")).click();
+	Thread.sleep(3000);
+	driver.findElement(By.id("outlined-name")).sendKeys("1111");
 	
+	Thread.sleep(6000);
+	driver.findElement(Threedot).click();
+	Thread.sleep(3000);
+	List<WebElement> ViewReceipt = driver.findElements(By.xpath("//ul[@role='menu']/li"));  
+	ViewReceipt.get(0).click();
+	Thread.sleep(3000);
+	WebElement txt =driver.findElement(By.xpath("(//td[contains(text(),'RRN')])[1]/br"));
+	//String text1 = txt.getText();
+	String text1=txt.getAttribute("innerHTML");
+		System.out.println("This Transaction RRN is " + text1);
 	
+
+	driver.findElement(Threedot).click();
+	Thread.sleep(6000);
+
+	List<WebElement> openbath = driver.findElements(By.xpath("//ul[@role='menu']/li"));  
+	openbath.get(1).click();
+    System.out.println("Successfully clicked for OpenBatch");
+    Thread.sleep(6000);
+    driver.findElement(By.id("outlined-name")).sendKeys(text1);
+   
 	
+}
+
 	
+public void ActionsOption() throws InterruptedException {
+	Thread.sleep(6000);
+	driver.findElement(By.xpath("//span[contains(text(),'Action')]")).click();
+	List<WebElement> AddTip = driver.findElements(By.xpath("//ul[@role='menu']/li"));
+	AddTip.get(2).click();
 	
-	
-	
-	
+}
+
+
+public void TipAdjustAmount() throws InterruptedException {
+
+driver.findElement(By.xpath("(//input[@name='222917016476'])[1]")).sendKeys("200");
+driver.findElement(By.xpath("(//div[@class='MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-4 MuiGrid-grid-md-2'])[2]")).click();
+driver.findElement(By.xpath("//span[contains(text(),'OK')]")).click();
+
+System.out.println("TipAdjust Successfull");
+
+
+
+
+
+     }
+
+
+
+
 }
 
 

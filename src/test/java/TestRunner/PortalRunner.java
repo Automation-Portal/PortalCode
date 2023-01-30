@@ -11,8 +11,8 @@ import io.cucumber.junit.CucumberOptions;
         glue= {"StepDefinitions", "AppHooks"},
        plugin= {"pretty"},
     		   
-    		   
-       tags= "@SUBISOOMAHA"		
+    		 //*[@id="myId"]/div/table/tbody/tr/td/table/tbody/tr/td/table[4]/tbody/tr[1]/td/div/table[8]/tbody/tr/td/br
+       tags= "@DeviceManagement"		
      
         )
 
@@ -22,6 +22,7 @@ import io.cucumber.junit.CucumberOptions;
 public class PortalRunner { 
 
 }
+
 
 
 

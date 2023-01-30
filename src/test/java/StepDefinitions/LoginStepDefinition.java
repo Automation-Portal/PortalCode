@@ -41,11 +41,12 @@ public class LoginStepDefinition {
 	public void user_clicks_on_continue_button() {
 		loginPage.continueButton();
 	}
+	
 
 	@When("user clicks on login button")
 	public void user_clicks_on_login_button() throws InterruptedException {
 
-		loginPage.clickOnLogin();
+		loginPage.LoginButton();
 	}
 
 }

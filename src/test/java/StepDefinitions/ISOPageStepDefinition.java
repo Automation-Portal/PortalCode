@@ -910,7 +910,44 @@ public void activating_postilion_processor_subiso_in_email() throws InterruptedE
 	
 }
 
+//DevieManagement:
 
+@When("user is search on particural epi to click")
+public void user_is_search_on_particural_epi_to_click() throws InterruptedException {
+   
+	isopage.DevicemanagementClick();
+	isopage.DevicemanagementSearchBoxClick();
+	isopage.DevicemanagementThreeDotClick();
+	isopage.TipFlagYes();
+}
+
+
+
+
+@When("user is clicked on tip flag is disabled & enabled  to check the sale txn")
+public void user_is_clicked_on_tip_flag_is_disabled_enabled_to_check_the_sale_txn() throws InterruptedException {
+    
+
+	isopage.epiD();
+	isopage.amount();
+	isopage.cardNumber();
+	isopage.CVV();
+	isopage.cardHolderName();
+	isopage.Process();
+	isopage.Txn();
+	isopage.ActionsOption();
+	isopage.TipAdjustAmount();
+	
+	
+	
+	
+	
+	
+}
+@When("user is tip is on and TIP ON SCREEN flag is disabled & enabled to check txn")
+public void user_is_tip_is_on_and_tip_on_screen_flag_is_disabled_enabled_to_check_txn() {
+    
+}
 
 
 	

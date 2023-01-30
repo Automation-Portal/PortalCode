@@ -176,6 +176,22 @@ Scenario Outline: Subiso in POSTILION
 		|SheetName|RowNumber|
 		|automation|0|
 		
+	
+	
+	
+@DeviceManagement	
+Scenario: ISO functionaly Device Management modules	in TIP,TAX & FEE
+	
+	When user is search on particural epi to click 
+	And user is clicked on tip flag is disabled & enabled  to check the sale txn 
+	When user is tip is on and TIP ON SCREEN flag is disabled & enabled to check txn
+	
+	
+	
+	 
+		
+		
+		
 		
 
 
