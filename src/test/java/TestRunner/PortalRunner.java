@@ -7,22 +7,17 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features= {"src/test/resources/AppFeatures/ISOPage.feature"},
+        features= {"src/test/resources/AppFeatures/Login.feature"},
         glue= {"StepDefinitions", "AppHooks"},
-       plugin= {"pretty"},
-    		   
-    		 //*[@id="myId"]/div/table/tbody/tr/td/table/tbody/tr/td/table[4]/tbody/tr[1]/td/div/table[8]/tbody/tr/td/br
-       tags= "@DeviceManagement"		
-     
+       plugin= {"pretty"
+    		  
+        },		
+        tags="@AdminLogin"	   
         )
 
 
 
 
-public class PortalRunner { 
+public class PortalRunner {
 
 }
-
-
-
-
